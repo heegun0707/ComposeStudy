@@ -8,11 +8,16 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarData
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -20,7 +25,9 @@ import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import we.study.composestudy.ui.theme.ComposeStudyTheme
 
 @ExperimentalMaterial3Api
@@ -45,6 +52,18 @@ fun ScaffoldComponent() {
                 ),
                 scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
             )
+        }, bottomBar = {
+            BottomAppBar(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                contentColor = MaterialTheme.colorScheme.primary,
+            ) {
+                Text(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    textAlign = TextAlign.Center,
+                    text = "Bottom app bar",
+                )
+            }
         }, floatingActionButton = {
             FloatingActionButton(onClick = {}) {
                 Icon(
@@ -52,7 +71,8 @@ fun ScaffoldComponent() {
                     contentDescription = null
                 )
             }
-        }
+        }, floatingActionButtonPosition = FabPosition.Center,
+        containerColor = MaterialTheme.colorScheme.error
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -66,7 +86,6 @@ fun ScaffoldComponent() {
         }
     }
 }
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
