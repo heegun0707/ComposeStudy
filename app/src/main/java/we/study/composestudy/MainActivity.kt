@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -12,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import we.study.composestudy.model.defaultItems
 import we.study.composestudy.ui.example.CatalogExample
+import we.study.composestudy.ui.example.ConstraintLayoutPreview
 import we.study.composestudy.ui.theme.ComposeStudyTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,11 +22,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeStudyTheme {
-                Surface(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    CatalogExample(defaultItems)
+                Column {
+                    ConstraintLayoutPreview()
                 }
+//                Surface(
+//                    modifier = Modifier.fillMaxWidth()
+//                ) {
+//                    CatalogExample(defaultItems)
+//                }
 
 //                ScaffoldPreview()
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
