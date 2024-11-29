@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import we.study.composestudy.model.defaultItems
 import we.study.composestudy.ui.example.CatalogExample
 import we.study.composestudy.ui.example.ConstraintLayoutPreview
+import we.study.composestudy.ui.example.DrawGather
 import we.study.composestudy.ui.theme.ComposeStudyTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,8 +25,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeStudyTheme {
-                Column {
-                    ConstraintLayoutPreview()
+                Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                    DrawGather()
                 }
 //                Surface(
 //                    modifier = Modifier.fillMaxWidth()
