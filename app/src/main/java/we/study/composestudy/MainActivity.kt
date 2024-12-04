@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import we.study.composestudy.ui.example.AlertDialogPreview
 import we.study.composestudy.ui.example.DialogPreview
+import we.study.composestudy.ui.example.DropdownMenuExample
 import we.study.composestudy.ui.theme.ComposeStudyTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +19,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeStudyTheme {
-                DialogPreview()
+                DropdownMenuExample()
+//                DialogPreview()
 //                Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
 //                    DrawGather()
 //                }
